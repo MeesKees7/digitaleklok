@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Klokkijken Oefenen</title>
+<link rel="stylesheet" href="stijl.css">
+</head>
+<body>
+
+<header>
+  <h1>🕒 Klokkijken</h1>
+</header>
+
+<!-- STARTSCHERM -->
+<section id="startScherm">
+  <h2>Kies je klok</h2>
+  <div class="keuzeRij">
+    <button class="groteKnop" data-klok="12">
+      <span class="groot">🕐 0 – 12 uur</span>
+    </button>
+    <button class="groteKnop" data-klok="24">
+      <span class="groot">🕑 0 – 24 uur</span>
+    </button>
+  </div>
+
+  <h2>Kies je oefening</h2>
+  <div class="keuzeRij">
+    <button class="groteKnop" data-oefening="heleHalve">Hele en halve uren</button>
+    <button class="groteKnop" data-oefening="kwartieren">Kwart voor en kwart over</button>
+    <button class="groteKnop" data-oefening="vijf">5 en 10 minuten</button>
+    <button class="groteKnop" data-oefening="alle">Alle tijden</button>
+  </div>
+
+  <div class="startKnop">
+    <button id="startKnop" class="hoofdKnop">▶ Start</button>
+  </div>
+  <p id="keuzeMelding" class="melding"></p>
+</section>
+
+<!-- OEFENSCHERM -->
+<section id="oefenScherm" hidden>
+  <div class="topRij">
+    <button id="terugKnop" class="kleineKnop">← Terug</button>
+    <div id="scoreBord" class="score">✔ 0 &nbsp; ✘ 0</div>
+  </div>
+
+  <div class="klokKaart">
+    <div id="dagdeelBadge" class="dagdeel" hidden></div>
+    <svg id="analogeKlok" class="klokSvg" viewBox="0 0 200 200">
+      <circle cx="100" cy="100" r="95" fill="#fff" stroke="#4a3aff" stroke-width="6"/>
+      <g id="wijzerplaat" class="cijfers"></g>
+      <line id="urenHand" x1="100" y1="100" x2="100" y2="55" stroke="#2b2b4a" stroke-width="7" stroke-linecap="round"/>
+      <line id="minutenHand" x1="100" y1="100" x2="100" y2="28" stroke="#4a3aff" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="100" cy="100" r="6" fill="#2b2b4a"/>
+    </svg>
+    <p id="vraagTekst" class="vraag">Hoe laat is het?</p>
+    <div id="antwoordKnoppen" class="antwoordRij"></div>
+    <div id="feedback" class="feedback"></div>
+  </div>
+
+  <button id="volgendeKnop" class="hoofdKnop" hidden>Volgende ▶</button>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
